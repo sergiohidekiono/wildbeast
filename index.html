@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <title>Wildbeast</title>
 </head>
 
@@ -130,7 +131,56 @@
 
 <style>
 
+    body, p, h1, ul, li, blockquote{
+        padding: 0;
+        margin: 0;
+    }
+
+    body{
+        font-family: 'Vollkorn', Georgia, serif;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
     img {
         max-width: 100px;
     }
+
+/* GRID GERAL */
+
+.estrutura{
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px; /*min 160px max 1fr(fração)*/
+    grid-template-areas: 
+        "header header header"
+        "sidenav content anuncios"
+        "footer footer footer";
+}
+
+.header{
+    grid-area: header;
+}
+
+.sidenav{
+    grid-area: sidenav;
+}
+
+.content{
+    grid-area: content;
+}
+
+.anuncios{
+    grid-area: anuncios;
+}
+
+.footer{
+    grid-area: footer;
+}
+
 </style>
