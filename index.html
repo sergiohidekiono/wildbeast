@@ -46,8 +46,6 @@
                     <span class="numero">72</span>
                     <span class="rotulo">kg</span>
                 </div>
-            </div>
-            <div>
                 <div>
                     <span class="numero">13</span>
                     <span class="rotulo">age</span>
@@ -79,7 +77,8 @@
             </p>
 
             <blockquote class="citacao">
-                <p class="col-wide">“Há algo no uivar do lobo que tira um homem do aqui e agora e o transporta para uma floresta da
+                <p class="col-wide">“Há algo no uivar do lobo que tira um homem do aqui e agora e o transporta para uma
+                    floresta da
                     mente.”
                 </p>
             </blockquote>
@@ -252,17 +251,88 @@
         grid-gap: 30px;
     }
 
-    .col-wide{
+    .col-wide {
         grid-column: 1 / -1;
     }
 
-    .imagem-1{
+    .imagem-1 {
         grid-row: span 2;
         align-self: end;
     }
 
-    .imagem-2{
+    .imagem-2 {
         align-self: end;
+    }
+
+    /* ESTILO CONTENT */
+
+    p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        letter-spacing: -0.005em;
+        color: rgba(0, 0, 0, .7);
+    }
+
+    .informacoes p+p {
+        margin-top: 30px;
+    }
+
+    /* TITULO */
+
+    .titulo {
+        color: #B07DFB;
+    }
+
+    .titulo h1 {
+        font-size: 3.75em;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    .titulo span {
+        font-size: 0.87em;
+        font-style: italic;
+    }
+
+    /* CARACTERISTICAS */
+
+    .caracteristicas {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    /* quero falar diretamente com a div que está na class .caracteristicas*/
+    .caracteristicas>div {
+        width: 80px;
+        text-align: center;
+        background: linear-gradient(135deg, #8844ee, #B07DFB);
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
+        position: relative;
+    }
+
+    /* quero falar diretamente com a primeira div que está na class .caracteristicas*/
+    .caracteristicas>div:first-child {
+        margin-right: 30px;
+    }
+
+    .caracteristicas span {
+        display: block;
+        color: #B07DFB;
+    }
+
+    .numero {
+        font-size: 3em;
+        line-height: 1;
+        margin: 10px auto;
+    }
+
+    .rotulo {
+        background: white;
+        border-radius: 0 0 5px 5px;
+        padding: 5px 0;
+        position: relative;
+        top: 2px;
     }
 
     /* ANUNCIONS */
@@ -283,10 +353,9 @@
         background: linear-gradient(135deg, #8844ee, #B07DFB);
     }
 
-    .footer p{
+    .footer p {
         color: white;
         text-align: center;
         padding: 30px;
     }
-
 </style>
