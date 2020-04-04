@@ -54,17 +54,17 @@
                 </div>
             </div>
 
-            <p>
+            <p class="col-wide">
                 É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior, cerca de 300 mil anos atrás.[2] O
                 sequenciamento de DNA e estudos genéticos reafirmam que o lobo cinzento é ancestral do cão doméstico
             </p>
-            <img src="./img/wolf1.jpg" alt="wolf1">
+            <img class="imagem-1" src="./img/wolf1.jpg" alt="wolf1">
 
             <p>
                 É um sobrevivente da Era do Gelo, originário do Pleistoceno Superior, cerca de 300 mil anos atrás.[2] O
                 sequenciamento de DNA e estudos.
             </p>
-            <img src="./img/wolf2.jpg" alt="wolf2">
+            <img class="imagem-2" src="./img/wolf2.jpg" alt="wolf2">
 
             <p>
                 O peso e tamanho dos lobos variam muito em todo o mundo, tendendo a aumentar proporcionalmente com a
@@ -79,7 +79,7 @@
             </p>
 
             <blockquote class="citacao">
-                <p>“Há algo no uivar do lobo que tira um homem do aqui e agora e o transporta para uma floresta da
+                <p class="col-wide">“Há algo no uivar do lobo que tira um homem do aqui e agora e o transporta para uma floresta da
                     mente.”
                 </p>
             </blockquote>
@@ -108,7 +108,7 @@
                     doméstico.</p>
             </div>
 
-            <img src="./img/wolf3.jpg" alt="wolf3">
+            <img class="col-wide" src="./img/wolf3.jpg" alt="wolf3">
 
         </main>
         <!-- 
@@ -244,6 +244,25 @@
 
     .content {
         grid-area: content;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+
+    .col-wide{
+        grid-column: 1 / -1;
+    }
+
+    .imagem-1{
+        grid-row: span 2;
+        align-self: end;
+    }
+
+    .imagem-2{
+        align-self: end;
     }
 
     /* ANUNCIONS */
