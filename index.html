@@ -137,12 +137,12 @@
     ul,
     li,
     blockquote {
-        padding: 0;
-        margin: 0;
+        padding: 0px;
+        margin: 0px
     }
 
     body {
-        font-family: 'Vollkorn', Georgia, serif;
+        font-family: "Volkorn", Georgia, serif;
     }
 
     li {
@@ -164,36 +164,38 @@
     .estrutura {
         display: grid;
         grid-template-columns: minmax(160px, 1fr) 3fr 300px;
-        /*min 160px max 1fr(fração)*/
         grid-template-areas:
             "header header header"
             "sidenav content anuncios"
-            "footer footer footer";
+            "footer footer footer"
+        ;
     }
 
-    @media (max-width: 1200px){
-        .estrutura{
-            grid-template-areas: 
-             "header header header"
-             "sidenav content content"
-             "sidenav anuncios anuncios"
-             "footer footer footer";
+    @media (max-width: 1200px) {
+        .estrutura {
+            grid-template-areas:
+                "header header header"
+                "sidenav content content"
+                "sidenav anuncios anuncios"
+                "footer footer footer"
+            ;
         }
     }
 
-    @media (max-width: 760px){
-        .estrutura{
+    @media (max-width: 760px) {
+        .estrutura {
             grid-template-columns: 100%;
-            grid-template-areas: 
-            "header"
-            "sidenav"
-            "content"
-            "anuncios"
-            "footer";
+            grid-template-areas:
+                "header"
+                "sidenav"
+                "content"
+                "anuncios"
+                "footer"
+            ;
         }
     }
 
-    /* HEADER */
+    /*HEADER*/
 
     .header {
         grid-area: header;
@@ -220,19 +222,36 @@
         font-size: 1.125em;
         background: rgba(0, 0, 0, .1);
         border-radius: 5px;
-        transform: .1s;
+        transition: 0.1s;
     }
 
     .header nav a:hover {
         background: rgba(0, 0, 0, .5);
     }
 
-    /*Pegue depois do 1º li e execute a ação*/
     .header li+li {
         margin-left: 30px;
     }
 
-    /* SIDENAV */
+    @media (max-width: 760px) {
+        .header {
+            grid-template-columns: auto;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .header nav a {
+            font-size: 1em;
+        }
+
+        .header li+li {
+            margin-left: 10px;
+        }
+    }
+
+    /*SIDENAV*/
 
     .sidenav {
         grid-area: sidenav;
@@ -248,15 +267,59 @@
         background: white;
         padding: 20px;
         border-radius: 5px;
-        box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
-        transition: .1 ease-out;
+        box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+        transition: .1s ease-out;
     }
 
     .sidenav li a:hover {
         background: #B07DFB;
     }
 
-    /* CONTENT */
+    @keyframes seta {
+        from {
+            right: 30px;
+        }
+
+        to {
+            right: 20px;
+        }
+    }
+
+    @media (max-width: 760px) {
+        .sidenav {
+            position: relative;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+        }
+
+        .sidenav::after {
+            content: '→';
+            position: absolute;
+            top: 5px;
+            right: 30px;
+            color: rgba(0, 0, 0, .3);
+            animation: seta .5s ease-in 0s infinite alternate;
+        }
+
+        .sidenav ul {
+            display: flex;
+        }
+
+        .sidenav li {
+            flex: 1 0 60px;
+        }
+
+        .sidenav {
+            padding: 0 30px;
+        }
+
+        .sidenav li a {
+            margin: 30px 30px 30px 0;
+        }
+    }
+
+    /*CONTENT*/
 
     .content {
         grid-area: content;
@@ -277,11 +340,11 @@
         align-self: end;
     }
 
-    .imagem-2 {
+    .item-2 {
         align-self: end;
     }
 
-    /* ESTILO CONTENT */
+    /*ESTILOS CONTENT*/
 
     p {
         font-size: 1.2em;
@@ -294,7 +357,7 @@
         margin-top: 30px;
     }
 
-    /* TITULO */
+    /*TITULO*/
 
     .titulo {
         color: #B07DFB;
@@ -311,24 +374,22 @@
         font-style: italic;
     }
 
-    /* CARACTERISTICAS */
+    /*CARACTERISTICAS*/
 
     .caracteristicas {
         display: flex;
         align-items: flex-start;
     }
 
-    /* quero falar diretamente com a div que está na class .caracteristicas*/
     .caracteristicas>div {
         width: 80px;
         text-align: center;
         background: linear-gradient(135deg, #8844ee, #B07DFB);
         border-radius: 5px;
-        box-shadow: 5px 5px 15px 0 rgba(44, 44, 44, .15);
+        box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
         position: relative;
     }
 
-    /* quero falar diretamente com a primeira div que está na class .caracteristicas*/
     .caracteristicas>div:first-child {
         margin-right: 30px;
     }
@@ -352,42 +413,45 @@
         top: 2px;
     }
 
-    .destaque{
+    .destaque {
         font-size: 0.875em;
         color: #B07DFB;
         max-width: 16em;
     }
 
-    .citacao, .atributos{
+    .citacao,
+    .atributos {
         align-self: start;
         padding: 30px;
         border-radius: 5px;
-        box-shadow: 5px 5px 15px 0 rgba(44,44,44,.15);
+        box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
         background: linear-gradient(135deg, #8844ee, #B07DFB);
     }
 
-    .citacao p{
+    .citacao p {
         font-size: 1.5em;
         font-style: italic;
         text-align: center;
         color: white;
         max-width: 500px;
-        margin: 0 auto; 
-        /* margin está alinhando ao centro */
+        margin: 0 auto;
     }
 
-    .atributos li{
+    .atributos li {
         color: white;
         font-family: Courier, monospace;
         font-size: 1.125em;
         padding: 15px;
     }
 
-    .atributos li + li {
+    .atributos li+li {
         border-top: 2px solid #B07DFB;
     }
 
-    /* ANUNCIONS */
+
+
+
+    /*ANUNCIOS*/
 
     .anuncios {
         grid-area: anuncios;
@@ -398,7 +462,7 @@
         grid-gap: 30px;
     }
 
-    /* FOOTER */
+    /*FOOTER*/
 
     .footer {
         grid-area: footer;
