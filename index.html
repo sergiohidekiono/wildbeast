@@ -76,14 +76,14 @@
                 Alasca, Canadá,[8] e na antiga União Soviética.
             </p>
 
-            <blockquote class="citacao">
+            <blockquote class="citacao col-wide">
                 <p class="col-wide">“Há algo no uivar do lobo que tira um homem do aqui e agora e o transporta para uma
                     floresta da
                     mente.”
                 </p>
             </blockquote>
 
-            <ul>
+            <ul class="atributos">
                 <li>Surgiu: 12.000 anos</li>
                 <li>Tipo: Mamífero</li>
                 <li>Idade Média: 13 anos</li>
@@ -219,7 +219,7 @@
 
     .sidenav {
         grid-area: sidenav;
-        background-color: #fafbfc;
+        background: #fafbfc;
         padding: 30px;
     }
 
@@ -290,7 +290,7 @@
     }
 
     .titulo span {
-        font-size: 0.87em;
+        font-size: 0.875em;
         font-style: italic;
     }
 
@@ -333,6 +333,41 @@
         padding: 5px 0;
         position: relative;
         top: 2px;
+    }
+
+    .destaque{
+        font-size: 0.875em;
+        color: #B07DFB;
+        max-width: 16em;
+    }
+
+    .citacao, .atributos{
+        align-self: start;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 15px 0 rgba(44,44,44,.15);
+        background: linear-gradient(135deg, #8844ee, #B07DFB);
+    }
+
+    .citacao p{
+        font-size: 1.5em;
+        font-style: italic;
+        text-align: center;
+        color: white;
+        max-width: 500px;
+        margin: 0 auto; 
+        /* margin está alinhando ao centro */
+    }
+
+    .atributos li{
+        color: white;
+        font-family: Courier, monospace;
+        font-size: 1.125em;
+        padding: 15px;
+    }
+
+    .atributos li + li {
+        border-top: 2px solid #B07DFB;
     }
 
     /* ANUNCIONS */
